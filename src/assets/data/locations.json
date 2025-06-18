@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Sector 18, Near DLF Cyber Hub",
+    "city": "Gurugram",
+    "state": "Haryana",
+    "pincode": "122002"
+  },
+  {
+    "id": 2,
+    "name": "Baithakkhana",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "pincode": "700009"
+  }
+]
