@@ -2,9 +2,13 @@ export const PROFILE_STRINGS = {
   editProfile: {
     title: "Edit Profile",
     name: "Name",
+    namePlaceHolder: "User Name",
     email: "Email",
-    phone: "Phone number",
-    save: "Save"
+    emailPlaceholder: "user@gmail.com",
+    phone: "Phone Number",
+    phonePlaceholder: "+91 9876543210",
+    save: "Save",
+    share: "Share"
   },
   driverInfo: {
     about: "About",
