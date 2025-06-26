@@ -1,0 +1,125 @@
+{
+  "user": {
+    "id": 1,
+    "personal_info": {
+      "name": "Tushar Kumar",
+      "email": "tushar@example.com",
+      "phone": "+919876543210",
+      "profile_image": "https://example.com/profiles/aditya.jpg"
+    },
+    "ride_history": [
+      {
+        "id": 1,
+        "status": "completed",
+        "date": "16 May 2025",
+        "time": "06:30 PM",
+        "fare": 252.0,
+        "address": "Sector 18, Near DLF Cyber Hub",
+        "city": "Gurugram, Haryana"
+      },
+      {
+        "id": 2,
+        "status": "upcoming",
+        "date": "16 May 2025",
+        "time": "06:30 PM",
+        "fare": 180.0,
+        "address": "Baithakkhana",
+        "city": "Kolkata, West Bengal"
+      },
+      {
+        "id": 3,
+        "status": "cancelled",
+        "date": "16 May 2025",
+        "time": "06:30 PM",
+        "fare": 300.0,
+        "address": "Connaught Place",
+        "city": "New Delhi"
+      }
+    ],
+    "ride_history_detail": [
+      {
+        "ride_id": 1,
+        "status": "completed",
+        "date": "16 May 2025",
+        "time": "06:30 PM",
+        "pickup": {
+          "address": "Sector 18, Near DLF Cyber Hub",
+          "city": "Gurugram, Haryana",
+          "coordinates": { "lat": 28.1234, "lng": 77.4567 }
+        },
+        "drop": {
+          "address": "Baithakkhana",
+          "city": "Kolkata, West Bengal",
+          "coordinates": { "lat": 22.5678, "lng": 88.3456 }
+        },
+        "driver": {
+          "id": 1,
+          "name": "Laxman Kumar",
+          "phone": "9876543210",
+          "rating": 4.5,
+          "vehicle": {
+            "type": "Sedan",
+            "number": "DL5CAB1234"
+          }
+        },
+        "fare": {
+          "total": 252.0,
+          "breakdown": {
+            "base_fare": 200.0,
+            "distance_charge": 40.0,
+            "tax": 12.0
+          },
+          "payment_method": "upi"
+        },
+        "duration": "00:45:00",
+        "distance": "10.5 km"
+      }
+    ],
+    "saved_locations": [
+      {
+        "nickname": "Home",
+        "address": "123 Central Road",
+        "city": "Faridabad"
+      },
+      {
+        "nickname": "Office",
+        "address": "Sector 18, Near DLF Cyber Hub",
+        "city": "Gurugram"
+      }
+    ],
+    "saved_drivers": [
+      {
+        "id": 1,
+        "name": "Laxman Kumar",
+        "phone": "9876543210",
+        "rating": 4.5,
+        "image": "https://i.pinimg.com/474x/4c/cd/08/4ccd086a8b7970c7a1ab4961e9bfcafc.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Rahul Sharma",
+        "phone": "9876543220",
+        "rating": 4.7,
+        "image": "https://i.pinimg.com/474x/f5/3e/c6/f53ec61db2e49c82b057554cb4a0cb91.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Vijay Singh",
+        "phone": "9876543230",
+        "rating": 4.3,
+        "image": "https://i.pinimg.com/474x/4a/5c/2f/4a5c2f2a828314d79432bb91afeb3ef3.jpg"
+      }
+    ],
+    "wallet": {
+      "balance": 1500.0,
+      "transactions": [
+        {
+          "id": 1,
+          "amount": 500.0,
+          "type": "added",
+          "date": "2023-11-10T14:22:00Z"
+        }
+      ]
+    }
+  }
+}

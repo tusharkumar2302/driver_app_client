@@ -1,0 +1,26 @@
+{
+  "driver": {
+    "id": 1,
+    "name": "Laxman Kumar",
+    "status": "Available",
+    "rating": 4.5,
+    "phone": "9876543210",
+    "image": "https://i.pinimg.com/474x/4c/cd/08/4ccd086a8b7970c7a1ab4961e9bfcafc.jpg",
+    "about": "I'm a professional and punctual driver committed to providing safe and comfortable rides. With a passion for the road and customer satisfaction, I strive to make every journey smooth and stress-free.",
+    "stats": {
+      "rides_completed": 10,
+      "experience": "1.5 yrs",
+      "accidents": 0
+    },
+    "personal_info": {
+      "languages": ["Hindi", "English"],
+      "gender": "Male",
+      "age": 32
+    },
+    "address": {
+      "pincode": "800003",
+      "city": "Kolkata",
+      "full_address": "123 Park Street, Kolkata, West Bengal"
+    }
+  }
+}
