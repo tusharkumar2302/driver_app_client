@@ -13,7 +13,7 @@ interface TextProps extends React.ComponentProps<typeof RNText> {
   style?: StyleProp<TextStyle>;
 }
 
-export const Text: React.FC<TextProps> = ({
+export const CustomText: React.FC<TextProps> = ({
   variant = 'body',
   weight = 'regular',
   align = 'left',
