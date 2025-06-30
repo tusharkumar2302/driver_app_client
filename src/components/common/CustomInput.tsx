@@ -5,10 +5,13 @@ import {
   StyleProp,
   ViewStyle,
   TextStyle,
+  View,
 } from 'react-native';
-import { View } from './View';
-import { Text } from './Text';
-import { useTheme } from '../../context/ThemeContext';
+import { CustomText } from './CustomText';
+import { COLORS } from '../../constants/colors';
+// import { View } from './View';
+// import { Text } from './Text';
+// import { useTheme } from '../../context/ThemeContext';
 
 interface InputProps extends TextInputProps {
   label?: string;
@@ -27,22 +30,23 @@ export const CustomInput: React.FC<InputProps> = ({
   containerStyle,
   ...props
 }) => {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
   return (
     <View style={containerStyle}>
       {label && (
-        <Text variant="caption" style={{ marginBottom: 4 }}>
+        <CustomText variant="caption" style={{ marginBottom: 4 }}>
           {label}
-        </Text>
+        </CustomText>
       )}
       <View
         style={{
           flexDirection: 'row',
+          backgroundColor: COLORS.backgroundSecondary,
           alignItems: 'center',
           borderWidth: 1,
-          borderColor: error ? theme.colors.error : theme.colors.border,
-          borderRadius: theme.borderRadius.sm,
+          borderColor: error ? COLORS.error : 'transparent',
+          borderRadius: 8,
           paddingHorizontal: 12,
         }}
       >
@@ -52,23 +56,23 @@ export const CustomInput: React.FC<InputProps> = ({
             {
               flex: 1,
               paddingVertical: 12,
-              color: theme.colors.text,
+              color: COLORS.white,
             },
             style,
           ]}
-          placeholderTextColor={theme.colors.textSecondary}
+          placeholderTextColor={COLORS.textDisabled}
           {...props}
         />
         {rightIcon && <View style={{ marginLeft: 8 }}>{rightIcon}</View>}
       </View>
       {error && (
-        <Text
+        <CustomText
           variant="caption"
-          color={theme.colors.error}
+          color={COLORS.error}
           style={{ marginTop: 4 }}
         >
           {error}
-        </Text>
+        </CustomText>
       )}
     </View>
   );
