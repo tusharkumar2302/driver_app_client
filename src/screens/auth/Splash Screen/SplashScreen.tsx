@@ -1,25 +1,12 @@
 import { View, Image } from 'react-native';
-import React, { useEffect } from 'react';
-import { resetAndNavigate } from '../../../utils/NavigationUtil';
+import React from 'react';
 import { GlobalStyles } from '../../../styles/globalStyles';
+import { logo_img } from '../../../constants/images';
 
 const SplashScreen = () => {
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      resetAndNavigate('Auth');
-    }, 2000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
   return (
     <View style={GlobalStyles.container}>
-      <Image
-        source={} // Need to add the logo
-        style={GlobalStyles.img}
-      />
+      <Image source={logo_img} style={GlobalStyles.img} />
     </View>
   );
 };
