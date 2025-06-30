@@ -11,11 +11,11 @@ export const COLORS = {
   secondaryLight: '#58d68d',
 
   // Status colors
-  success: '#2ecc71',
-  warning: '#f39c12',
-  error: '#e74c3c',
-  info: '#3498db',
-  disabled: '#bdc3c7',
+  success: '#388E3C',//green
+  warning: '#D39A2C',//yellow
+  error: '#CB0404',//red
+  info: '#1976D2',//blue
+  disabled: '#BDBDBD',
 
   // Grayscale
   white: '#ffffff',
@@ -31,13 +31,13 @@ export const COLORS = {
   gray900: '#212529',
 
   // Text colors
-  textPrimary: '#212529',
-  textSecondary: '#6c757d',
-  textDisabled: '#adb5bd',
+  textPrimary: 'white',
+  textSecondary: 'black',
+  textDisabled: '#BDBDBD',
 
   // Backgrounds
-  backgroundPrimary: '#ffffff',
-  backgroundSecondary: '#f8f9fa',
+  backgroundPrimary: '#0D0D0D',
+  backgroundSecondary: '#212121',
   backgroundDark: '#343a40',
 
   // Borders
