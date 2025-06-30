@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { COLORS, SPACING, BORDER_RADIUS, FONT_SIZES } from '../constants';
-import { SCREEN_WIDTH } from '../constants/dimensions';
+// import { COLORS, SPACING, BORDER_RADIUS, FONT_SIZES } from '../constants';
+import { BORDER_RADIUS, SCREEN_WIDTH, SPACING } from '../constants/dimensions';
+import { COLORS } from '../constants/colors';
 
 export const GlobalStyles = StyleSheet.create({
   baseContainer: {
@@ -19,6 +20,12 @@ export const GlobalStyles = StyleSheet.create({
     resizeMode: 'contain',
   },
   // Layout
+
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 20,
+  },
   flex: {
     flex: 1,
   },
@@ -103,7 +110,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   buttonText: {
     color: COLORS.white,
-    fontSize: FONT_SIZES.md,
+    fontSize: 16,
     fontWeight: '500',
   },
 });
