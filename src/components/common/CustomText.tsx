@@ -29,7 +29,7 @@ export const CustomText: React.FC<TextProps> = ({
     h3: { fontSize: 20, lineHeight: 28 },
     body: { fontSize: 16, lineHeight: 24 },
     caption: { fontSize: 12, lineHeight: 16 },
-    button: { fontSize: 14, lineHeight: 20 },
+    button: { fontSize: 16, lineHeight: 20 },
   };
 
   const weightStyles: Record<TextWeight, TextStyle> = {

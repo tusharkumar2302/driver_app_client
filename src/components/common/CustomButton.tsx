@@ -1,7 +1,15 @@
 import React from 'react';
-import { TouchableOpacity, TouchableOpacityProps, ActivityIndicator, StyleProp, ViewStyle } from 'react-native';
-import { Text } from './Text';
-import { useTheme } from '../../context/ThemeContext';
+import {
+  TouchableOpacity,
+  TouchableOpacityProps,
+  ActivityIndicator,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
+import { CustomText } from './CustomText';
+import { COLORS } from '../../constants/colors';
+// import { Text } from './Text';
+// import { useTheme } from '../../context/ThemeContext';
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'text';
 type ButtonSize = 'sm' | 'md' | 'lg';
@@ -27,21 +35,21 @@ export const CustomButton: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
   const variantStyles: Record<ButtonVariant, ViewStyle> = {
     primary: {
-      backgroundColor: theme.colors.primary,
+      backgroundColor: COLORS.white,
       borderWidth: 0,
     },
     secondary: {
-      backgroundColor: theme.colors.secondary,
+      backgroundColor: COLORS.backgroundSecondary,
       borderWidth: 0,
     },
     outline: {
       backgroundColor: 'transparent',
       borderWidth: 1,
-      borderColor: theme.colors.border,
+      borderColor: COLORS.white,
     },
     text: {
       backgroundColor: 'transparent',
@@ -59,7 +67,7 @@ export const CustomButton: React.FC<ButtonProps> = ({
     <TouchableOpacity
       style={[
         {
-          borderRadius: theme.borderRadius.md,
+          borderRadius: 8,
           flexDirection: 'row',
           alignItems: 'center',
           justifyContent: 'center',
@@ -75,21 +83,22 @@ export const CustomButton: React.FC<ButtonProps> = ({
       {...props}
     >
       {loading ? (
-        <ActivityIndicator color={theme.colors.textOnPrimary} />
+        <ActivityIndicator />
       ) : (
         <>
           {leftIcon}
-          <Text
+          <CustomText
             variant="button"
             color={
               variant === 'primary'
-                ? theme.colors.textOnPrimary
-                : theme.colors.text
+                ? "black"
+                : "white"
             }
+            weight='medium'
             style={{ marginHorizontal: 8 }}
           >
             {children}
-          </Text>
+          </CustomText>
           {rightIcon}
         </>
       )}

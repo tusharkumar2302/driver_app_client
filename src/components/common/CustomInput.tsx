@@ -35,7 +35,7 @@ export const CustomInput: React.FC<InputProps> = ({
   return (
     <View style={containerStyle}>
       {label && (
-        <CustomText variant="caption" style={{ marginBottom: 4 }}>
+        <CustomText color={COLORS.white} variant="body" style={{ marginBottom: 10 }}>
           {label}
         </CustomText>
       )}
