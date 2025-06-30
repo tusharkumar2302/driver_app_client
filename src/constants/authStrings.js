@@ -20,10 +20,11 @@ export const AUTH_STRINGS = {
   },
   forgotPassword: {
     title: "Forgot Password",
+    otp:"Enter OTP",
     subtitle: "Please enter your email address. So we'll send you link to get back into your account.",
     sentOtp: "Sent OTP",
     otpMessage: "We have sent the code verification to your email address",
-    resend: "Resend code in 55 sec",
+    resend: "Resend code in ",
     verify: "Verify"
   },
   resetPassword: {
