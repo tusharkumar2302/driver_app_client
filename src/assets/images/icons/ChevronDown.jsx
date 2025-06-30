@@ -5,7 +5,7 @@ const ChevronDown = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 13}
     height={props.height || 14}
-    viewbox="0 0 14 14"
+    viewBox="0 0 14 14"
     fill="none"
     {...props}
   >

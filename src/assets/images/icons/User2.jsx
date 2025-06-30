@@ -5,7 +5,7 @@ const User2 = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 23}
     height={props.height || 30}
-    viewbox="0 0 30 30"
+    viewBox="0 0 30 30"
     fill="none"
     {...props}
   >

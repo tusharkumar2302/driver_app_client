@@ -6,7 +6,7 @@ const SvgComponent = (props) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     width={props.width || 24}
     height={props.height || 24}
-    viewbox="0 0 24 24"
+    viewBox="0 0 24 24"
     fill="none"
     {...props}
   >

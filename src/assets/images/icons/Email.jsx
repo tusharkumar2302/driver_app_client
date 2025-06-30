@@ -5,7 +5,7 @@ const Email = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 14}
     height={props.height || 12}
-    viewbox="0 0 14 14"
+    viewBox="0 0 14 14"
     fill="none"
     {...props}
   >

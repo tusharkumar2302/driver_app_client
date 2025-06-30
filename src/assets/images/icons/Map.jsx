@@ -5,7 +5,7 @@ const Map = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 12}
     height={props.width || 12}
-    viewbox="0 0 12 12"
+    viewBox="0 0 12 12"
     fill="none"
     {...props}
   >

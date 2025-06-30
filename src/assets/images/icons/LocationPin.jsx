@@ -6,7 +6,7 @@ const LocationPin = (props) => (
     width={props.width || 15}
     height={props.width || 15}
     fill="none"
-    viewbox="0 0 15 15"
+    viewBox="0 0 15 15"
     {...props}
   >
     <G clipPath="url(#a)">

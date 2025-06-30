@@ -5,7 +5,7 @@ const Home = (props) => (
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 32}
     height={props.height || 29}
-    viewbox="0 0 32 29"
+    viewBox="0 0 32 29"
     fill="none"
     {...props}
   >
