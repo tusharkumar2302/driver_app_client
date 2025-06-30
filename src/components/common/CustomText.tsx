@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text as RNText, TextStyle, StyleProp } from 'react-native';
-import { useTheme } from '../../context/ThemeContext';
+// import { useTheme } from '../../context/ThemeContext';
 
 type TextVariant = 'h1' | 'h2' | 'h3' | 'body' | 'caption' | 'button';
 type TextWeight = 'regular' | 'medium' | 'bold';
@@ -21,7 +21,7 @@ export const CustomText: React.FC<TextProps> = ({
   style,
   ...props
 }) => {
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
   const variantStyles: Record<TextVariant, TextStyle> = {
     h1: { fontSize: 32, lineHeight: 40 },
@@ -43,7 +43,7 @@ export const CustomText: React.FC<TextProps> = ({
       style={[
         variantStyles[variant],
         weightStyles[weight],
-        { color: color || theme.colors.text, textAlign: align },
+        { color: color, textAlign: align },
         style,
       ]}
       {...props}
