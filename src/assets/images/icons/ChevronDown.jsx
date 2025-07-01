@@ -1,6 +1,6 @@
-import * as React from "react"
-import Svg, { Path } from "react-native-svg"
-const ChevronDown = (props) => (
+import * as React from 'react';
+import Svg, { Path } from 'react-native-svg';
+const ChevronDown = props => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     width={props.width || 13}
@@ -10,12 +10,12 @@ const ChevronDown = (props) => (
     {...props}
   >
     <Path
-      stroke={props.color || "#BDBDBD"}
+      stroke={props.color || '#BDBDBD'}
       strokeLinecap="round"
       strokeLinejoin="round"
-      strokeWidth={2}
+      strokeWidth={props.strokeWidth || 2}
       d="m3.25 5.25 3.25 3.5 3.25-3.5"
     />
   </Svg>
-)
-export default ChevronDown
+);
+export default ChevronDown;
