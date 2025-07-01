@@ -113,4 +113,8 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
   },
+  line: {
+    borderWidth: 0.2,
+    borderColor: COLORS.borderLight,
+  },
 });
