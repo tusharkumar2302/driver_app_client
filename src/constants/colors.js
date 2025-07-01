@@ -11,10 +11,10 @@ export const COLORS = {
   secondaryLight: '#58d68d',
 
   // Status colors
-  success: '#388E3C',//green
-  warning: '#D39A2C',//yellow
-  error: '#CB0404',//red
-  info: '#1976D2',//blue
+  success: '#388E3C', //green
+  warning: '#D39A2C', //yellow
+  error: '#CB0404', //red
+  info: '#1976D2', //blue
   disabled: '#BDBDBD',
 
   // Grayscale
@@ -38,6 +38,7 @@ export const COLORS = {
   // Backgrounds
   backgroundPrimary: '#0D0D0D',
   backgroundSecondary: '#212121',
+  backgroundTertiary: '#161616',
   backgroundDark: '#343a40',
 
   // Borders
