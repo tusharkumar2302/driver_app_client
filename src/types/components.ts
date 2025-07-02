@@ -3,6 +3,6 @@ export interface BookingCardTypes {
   city: string;
   state: string;
   slot: Date;
-  status: 'Allotted' | 'Not-Allotted' | 'Cancelled' | 'Completed';
+  status: 'Allotted' | 'Not-Allotted' | 'Cancelled' | 'Completed' | string;
   price: number;
 }
