@@ -7,6 +7,7 @@ import { dateFormatter, timeFormatter } from '../utils/formatters';
 import { CustomButton } from './common/CustomButton';
 import ChevronDown from '../assets/images/icons/ChevronDown';
 import { GlobalStyles } from '../styles/globalStyles';
+import { StatusColor } from '../utils/helpers';
 
 const BookingCard = ({
   address,
@@ -46,7 +47,10 @@ const BookingCard = ({
       </View>
       <View style={[GlobalStyles.line, { marginTop: 10 }]} />
       <View style={BookingCardStyles.row}>
-        <CustomText color="red" style={BookingCardStyles.status}>
+        <CustomText
+          color={StatusColor[`${status}`]}
+          style={BookingCardStyles.status}
+        >
           {status}
         </CustomText>
         <CustomButton
