@@ -26,6 +26,12 @@ export const GlobalStyles = StyleSheet.create({
     flexDirection: 'row',
     gap: 20,
   },
+  header2: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent:"space-between",
+    marginTop:12
+  },
   flex: {
     flex: 1,
   },
