@@ -27,7 +27,7 @@ export default function BookingDetails() {
       {/* header */}
       <View style={GlobalStyles.header2}>
         <ArrowRight width={24} height={24} />
-        <CustomText color={COLORS.white} variant="h3" weight="bold">
+        <CustomText color={COLORS.white} variant="h3" weight="medium">
           Details
         </CustomText>
         <View style={{ width: 24 }} />
