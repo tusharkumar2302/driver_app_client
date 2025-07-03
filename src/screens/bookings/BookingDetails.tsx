@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, ScrollView, StyleSheet, View } from 'react-native';
 import WebView from 'react-native-webview';
-import LocationPin from '../../assets/images/icons/LocationPin';
 import { screenHeight } from '../../utils/Constants';
 import { COLORS } from '../../constants/colors';
 import { GlobalStyles } from '../../styles/globalStyles';
@@ -84,7 +83,7 @@ export default function BookingDetails() {
             </View>
           </View>
           <View style={BookingDetailStyles.rebook}>
-            <CustomText color={COLORS.white} weight="bold" align="center">
+            <CustomText color={COLORS.white} weight="medium" align="center">
               ₹ 252.00
             </CustomText>
             <CustomButton
