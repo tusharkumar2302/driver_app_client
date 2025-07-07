@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CustomTabBar from '../components/common/CustomTabBar';
-import Home from '../screens/ride flow/Home';
-import Booking from '../screens/bookings/Booking';
 import Account from '../screens/account/Account';
+import Booking from '../screens/bookings/Booking';
+import Home from '../screens/rideFlow/Home';
 import Support from '../screens/support/Support';
 
 const Tab = createBottomTabNavigator();
