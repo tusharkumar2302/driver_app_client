@@ -9,7 +9,7 @@ import Facebook from '../assets/images/icons/Facebook';
 
 const AuthLayout = ({ header, footer, children }: any) => {
   return (
-    <View>
+    <View style={{backgroundColor: COLORS.backgroundPrimary}}>
       <View>{header}</View>
       <View>{children}</View>
       <View style={styles.divider}>
@@ -26,7 +26,7 @@ const AuthLayout = ({ header, footer, children }: any) => {
           Facebook
         </CustomButton>
       </View>
-      <View>
+      <View style={{paddingBottom: 50}}>
         {footer}
       </View>
     </View>

@@ -1,4 +1,4 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { Image, Pressable, StyleSheet, View } from 'react-native';
 import React from 'react';
 import ArrowRight from '../../../assets/images/icons/ArrowRight';
 import { CustomText } from '../../../components/common/CustomText';
@@ -9,6 +9,7 @@ import { ForgotPassword1_img } from '../../../constants/images';
 import { CustomInput } from '../../../components/common/CustomInput';
 import { CustomButton } from '../../../components/common/CustomButton';
 import { SCREEN_HEIGHT } from '../../../constants/dimensions';
+import { navigate } from '../../../utils/NavigationUtil';
 const ForgotPassword1 = () => {
   return (
     <View style={ForgotPassword1Styles.container}>
@@ -33,9 +34,11 @@ const ForgotPassword1 = () => {
           label={AUTH_STRINGS.login.enterEmail}
           placeholder={AUTH_STRINGS.login.placeholder}
         />
+        <Pressable onPress={() => {navigate('ForgetPassword2')}}>
         <CustomButton style={{ marginHorizontal: 10, marginTop: 22 }}>
-          Sent OTP
+          {AUTH_STRINGS.forgotPassword.sentOtp}
         </CustomButton>
+        </Pressable>
       </View>
     </View>
   );

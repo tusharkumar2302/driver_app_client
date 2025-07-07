@@ -13,12 +13,15 @@ import Eye from '../../../assets/images/icons/Eye';
 import { AUTH_STRINGS } from '../../../constants/authStrings';
 import { CustomButton } from '../../../components/common/CustomButton';
 import AuthLayout from '../../../layouts/AuthLayout';
+import { navigate } from '../../../utils/NavigationUtil';
 
 const SignUpScreen = () => {
   const [visible, setVisible] = useState<boolean>(true);
   const customHeader = (
     <View style={GlobalStyles.header}>
+      <Pressable onPress={() => navigate('Login')}>
       <ArrowRight width={28} height={28} />
+      </Pressable>
       <CustomText color={COLORS.white} variant="h2" weight="bold">
         {AUTH_STRINGS.signup.title}
       </CustomText>
@@ -70,9 +73,11 @@ const SignUpScreen = () => {
             placeholder={AUTH_STRINGS.login.placeholder}
             secureTextEntry={true}
           />
+          <Pressable onPress={() => navigate('ForgetPassword1')}>
           <CustomText align="right" color={COLORS.white}>
             {AUTH_STRINGS.forgotPassword.title} ?
           </CustomText>
+          </Pressable>
         </View>
         <View style={signUpStyles.button}>
           <CustomButton>{AUTH_STRINGS.signup.signUp}</CustomButton>

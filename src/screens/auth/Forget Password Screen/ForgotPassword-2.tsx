@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, Pressable } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import ArrowRight from '../../../assets/images/icons/ArrowRight';
 import { CustomText } from '../../../components/common/CustomText';
@@ -9,6 +9,7 @@ import { ForgotPassword2_img } from '../../../constants/images';
 import { CustomButton } from '../../../components/common/CustomButton';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../../constants/dimensions';
 import OTP from '../../../components/OTP';
+import { navigate } from '../../../utils/NavigationUtil';
 
 const COUNTDOWN = 60;
 
@@ -63,9 +64,11 @@ const ForgotPassword2 = () => {
             {time} sec
           </CustomText>
         </CustomText>
+        <Pressable onPress={() => {navigate('CreateNewPassword')}}>
         <CustomButton style={{ marginHorizontal: 10, marginTop: 22 }}>
           {AUTH_STRINGS.forgotPassword.verify}
         </CustomButton>
+        </Pressable>
       </View>
     </View>
   );
