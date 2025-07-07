@@ -13,7 +13,7 @@ export const COLORS = {
   // Status colors
   success: '#388E3C', //green
   warning: '#D39A2C', //yellow
-  error: '#CB0404', //red
+  error: '#D32F2F', //red
   info: '#1976D2', //blue
   disabled: '#BDBDBD',
 

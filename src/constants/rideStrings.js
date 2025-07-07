@@ -30,9 +30,11 @@ export const RIDE_STRINGS = {
     savedCard: 'Saved card',
     success: 'Payment Successful',
     successDescription:
-      'Thank you! Your payment is successful!\n\nOur team will reach out shortly if required.',
+      'Thank you! Your payment is successful! Our team will reach out shortly if required.',
+    backToHome: 'Back to Home',  
     failure: 'Payment Error',
     failureDescription: 'Please try again',
+    tryAgain: 'Try Again',
     continue: 'Continue',
   },
   bookingDetail: {

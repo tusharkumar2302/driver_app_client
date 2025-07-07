@@ -9,7 +9,7 @@ export const AUTH_STRINGS = {
     socialLogin: "Or continue with social account",
     google: "Google",
     facebook: "Facebook",
-    noAccount: "Don't have an account? Sign up"
+    noAccount: "Don't have an account?"
   },
   signup: {
     title: "Create New Account",
