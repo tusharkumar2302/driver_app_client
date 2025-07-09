@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ScrollView, StyleSheet, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import WebView from 'react-native-webview';
 import { screenHeight } from '../../utils/Constants';
 import { COLORS } from '../../constants/colors';
@@ -172,31 +172,31 @@ export default function BookingDetails() {
         >
           Report and issue
         </CustomText>
-        <View style={BookingDetailStyles.boxRow}>
+        <Pressable style={BookingDetailStyles.boxRow}>
           <CustomText color={COLORS.disabled}>
             Overcharged by the driver
           </CustomText>
           <ChevronLeft height={16} width={12} />
-        </View>
+        </Pressable>
         <View style={GlobalStyles.line} />
-        <View style={BookingDetailStyles.boxRow}>
+        <Pressable style={BookingDetailStyles.boxRow}>
           <CustomText color={COLORS.disabled}>Ride safety</CustomText>
           <ChevronLeft height={16} width={12} />
-        </View>
+        </Pressable>
         <View style={GlobalStyles.line} />
-        <View style={BookingDetailStyles.boxRow}>
+        <Pressable style={BookingDetailStyles.boxRow}>
           <CustomText color={COLORS.disabled}>
             Billing related issues
           </CustomText>
           <ChevronLeft height={16} width={12} />
-        </View>
+        </Pressable>
         <View style={GlobalStyles.line} />
-        <View style={BookingDetailStyles.boxRow}>
+        <Pressable style={BookingDetailStyles.boxRow}>
           <CustomText color={COLORS.disabled}>
             I want to report and issue about the driver
           </CustomText>
           <ChevronLeft height={16} width={12} />
-        </View>
+        </Pressable>
       </View>
     </ScrollView>
   );
