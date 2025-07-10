@@ -3,6 +3,7 @@ import React, { ComponentType } from 'react';
 import { SvgProps } from 'react-native-svg';
 import { CustomText } from './common/CustomText';
 import { COLORS } from '../constants/colors';
+import { RIDE_STRINGS } from '../constants/rideStrings';
 
 interface CarViewCardProps {
   Icon: ComponentType<SvgProps>;
@@ -33,8 +34,13 @@ const CarViewCard = ({
         </View>
       </View>
       {isSelected && (
-        <CustomText color={COLORS.white} style={styles.selectedText}>
-          Selected 
+        <CustomText
+          weight="bold"
+          color={COLORS.white}
+          style={styles.selectedText}
+        >
+          {'  '}
+          {RIDE_STRINGS.booking.selected}
         </CustomText>
       )}
     </View>
