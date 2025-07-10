@@ -17,6 +17,7 @@ import { CAR_TYPE_STRINGS } from '../constants/carTypeStrings';
 import { CustomButton } from './common/CustomButton';
 import XMark from '../assets/images/icons/XMark';
 import { CarTypes } from '../constants/carTypes';
+import { CustomModal } from './common/CustomModal';
 
 type CarName = (typeof CarTypes)[number]['name'];
 
@@ -84,84 +85,74 @@ const CarSelector = ({ isVisible, setIsVisible }: CarSelectorProps) => {
   };
 
   return (
-    <View style={[styles.container, { display: isVisible ? 'flex' : 'none' }]}>
-      <View style={styles.wrapper}>
-        <Pressable
-          onPress={() => {
-            setIsVisible(false);
+    <CustomModal visible={isVisible} onClose={() => setIsVisible(false)}>
+      <CustomText
+        color={COLORS.white}
+        weight="medium"
+        variant="h3"
+        style={styles.heading}
+        align="center"
+      >
+        {CAR_TYPE_STRINGS.carType.selectCarType}
+      </CustomText>
+      <View>
+        <FlatList
+          ref={listRef}
+          data={CarTypes}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          decelerationRate="fast"
+          bounces={false}
+          overScrollMode="never"
+          contentContainerStyle={{
+            paddingHorizontal: SPACER,
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: 30,
           }}
-          style={styles.closeButton}
-        >
-          <XMark width={15} height={15} />
-        </Pressable>
-        <CustomText
-          color={COLORS.white}
-          weight="medium"
-          variant="h3"
-          style={styles.heading}
-          align="center"
-        >
-          {CAR_TYPE_STRINGS.carType.selectCarType}
-        </CustomText>
-        <View>
-          <FlatList
-            ref={listRef}
-            data={CarTypes}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            decelerationRate="fast"
-            bounces={false}
-            overScrollMode="never"
-            contentContainerStyle={{
-              paddingHorizontal: SPACER,
-              flexDirection: 'row',
-              alignItems: 'center',
-              gap: 30,
-            }}
-            onMomentumScrollEnd={onScrollEnd}
-            renderItem={renderItem}
-            ItemSeparatorComponent={() => <View style={{ width: GAP }} />}
-            keyExtractor={item => item.name}
-            getItemLayout={(_, i) => ({
-              length: STEP,
-              offset: STEP * i,
-              index: i,
-            })}
-          />
-        </View>
-        <View style={styles.buttons}>
-          <CustomButton
-            variant={
-              transmission == CAR_TYPE_STRINGS.carType.automatic
-                ? 'primary'
-                : 'outline'
-            }
-            onPress={() => {
-              setTransmission(CAR_TYPE_STRINGS.carType.automatic);
-            }}
-            style={styles.button}
-          >
-            {CAR_TYPE_STRINGS.carType.automatic}
-          </CustomButton>
-          <CustomButton
-            variant={
-              transmission == CAR_TYPE_STRINGS.carType.manual
-                ? 'primary'
-                : 'outline'
-            }
-            onPress={() => {
-              setTransmission(CAR_TYPE_STRINGS.carType.manual);
-            }}
-            style={styles.button}
-          >
-            {CAR_TYPE_STRINGS.carType.manual}
-          </CustomButton>
-        </View>
-        <View style={styles.addButton}>
-          <CustomButton>{CAR_TYPE_STRINGS.carType.add}</CustomButton>
-        </View>
+          onMomentumScrollEnd={onScrollEnd}
+          renderItem={renderItem}
+          ItemSeparatorComponent={() => <View style={{ width: GAP }} />}
+          keyExtractor={item => item.name}
+          getItemLayout={(_, i) => ({
+            length: STEP,
+            offset: STEP * i,
+            index: i,
+          })}
+        />
       </View>
-    </View>
+      <View style={styles.buttons}>
+        <CustomButton
+          variant={
+            transmission == CAR_TYPE_STRINGS.carType.automatic
+              ? 'primary'
+              : 'outline'
+          }
+          onPress={() => {
+            setTransmission(CAR_TYPE_STRINGS.carType.automatic);
+          }}
+          style={styles.button}
+        >
+          {CAR_TYPE_STRINGS.carType.automatic}
+        </CustomButton>
+        <CustomButton
+          variant={
+            transmission == CAR_TYPE_STRINGS.carType.manual
+              ? 'primary'
+              : 'outline'
+          }
+          onPress={() => {
+            setTransmission(CAR_TYPE_STRINGS.carType.manual);
+          }}
+          style={styles.button}
+        >
+          {CAR_TYPE_STRINGS.carType.manual}
+        </CustomButton>
+      </View>
+      <View style={styles.addButton}>
+        <CustomButton>{CAR_TYPE_STRINGS.carType.add}</CustomButton>
+      </View>
+    </CustomModal>
   );
 };
 

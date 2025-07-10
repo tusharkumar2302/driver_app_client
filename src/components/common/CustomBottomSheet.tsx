@@ -11,7 +11,14 @@ interface CustomBottomSheetProps {
 }
 
 const CustomBottomSheet = forwardRef<any, CustomBottomSheetProps>(
-  ({ height = SCREEN_HEIGHT * 0.6, children , backgroundColor = COLORS.backgroundSecondary }, ref) => {
+  (
+    {
+      height = SCREEN_HEIGHT * 0.6,
+      children,
+      backgroundColor = COLORS.backgroundSecondary,
+    },
+    ref,
+  ) => {
     const refRBSheet = useRef<any>(null);
 
     useImperativeHandle(ref, () => ({
@@ -35,6 +42,7 @@ const CustomBottomSheet = forwardRef<any, CustomBottomSheetProps>(
             backgroundColor: backgroundColor,
             height: height,
             marginBottom: 45,
+            paddingHorizontal: 10,
           },
         }}
         customModalProps={{
