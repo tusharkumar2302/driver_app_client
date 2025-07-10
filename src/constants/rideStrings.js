@@ -13,7 +13,7 @@ export const RIDE_STRINGS = {
     selectLocation: 'Select pickup location',
     searchLocationPlaceholder: 'Search location',
     selectMap: 'Select on map',
-    selectCar: 'Selected cars',
+    selectCar: 'Select your car',
     selected: 'Selected',
     addCar: 'Add your car +',
     selectSlot: 'Select your slot',
