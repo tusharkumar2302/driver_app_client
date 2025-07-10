@@ -1,7 +1,16 @@
 import React, { ReactNode } from 'react';
-import { Modal, TouchableWithoutFeedback, View, StyleSheet, ViewStyle, Dimensions } from 'react-native';
-import { useTheme } from '../../context/ThemeContext';
-import { Text } from './Text';
+import {
+  Modal,
+  TouchableWithoutFeedback,
+  View,
+  StyleSheet,
+  ViewStyle,
+  Dimensions,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
+import { CustomText } from './CustomText';
+import { COLORS } from '../../constants/colors';
 
 interface CustomModalProps {
   visible: boolean;
@@ -26,17 +35,16 @@ export const CustomModal: React.FC<CustomModalProps> = ({
   backdropOpacity = 0.5,
   containerStyle,
 }) => {
-  const { theme } = useTheme();
-
   const positionStyles = {
     center: {
       justifyContent: 'center',
-      padding: 20,
     },
     bottom: {
       justifyContent: 'flex-end',
     },
   };
+
+  const ContentWrapper = avoidKeyboard ? KeyboardAvoidingView : View;
 
   return (
     <Modal
@@ -55,29 +63,34 @@ export const CustomModal: React.FC<CustomModalProps> = ({
         />
       </TouchableWithoutFeedback>
 
-      <View
+      <ContentWrapper
         style={[styles.modalContainer, positionStyles[position]]}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
         pointerEvents="box-none"
       >
         <View
           style={[
             styles.modalContent,
             {
-              backgroundColor: theme.colors.card,
-              borderRadius: theme.borderRadius.lg,
+              backgroundColor: COLORS.backgroundSecondary,
+              borderRadius: 8,
             },
-            position === 'bottom' && { width: '100%', borderBottomLeftRadius: 0, borderBottomRightRadius: 0 },
+            position === 'bottom' && {
+              width: '100%',
+              borderBottomLeftRadius: 0,
+              borderBottomRightRadius: 0,
+            },
             containerStyle,
           ]}
         >
           {title && (
-            <Text variant="h3" style={styles.modalHeader}>
+            <CustomText variant="h3" style={styles.modalHeader}>
               {title}
-            </Text>
+            </CustomText>
           )}
           {children}
         </View>
-      </View>
+      </ContentWrapper>
     </Modal>
   );
 };
