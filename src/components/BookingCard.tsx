@@ -8,6 +8,7 @@ import { CustomButton } from './common/CustomButton';
 import ChevronDown from '../assets/images/icons/ChevronDown';
 import { GlobalStyles } from '../styles/globalStyles';
 import { StatusColor } from '../utils/helpers';
+import { navigate } from '../utils/NavigationUtil';
 
 const BookingCard = ({
   address,
@@ -55,6 +56,9 @@ const BookingCard = ({
         </CustomText>
         <CustomButton
           variant="text"
+          onPress={() => {
+            navigate('BookingDetail');
+          }}
           rightIcon={<ChevronDown height={20} width={19} strokeWidth={1.2} />}
         >
           <CustomText color={COLORS.disabled}>More details</CustomText>

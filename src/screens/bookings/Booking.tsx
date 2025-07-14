@@ -5,6 +5,7 @@ import { CustomButton } from '../../components/common/CustomButton';
 import { GlobalStyles } from '../../styles/globalStyles';
 import { COLORS } from '../../constants/colors';
 import BookingCard from '../../components/BookingCard';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Booking = () => {
   const [type, setType] = useState<'Completed' | 'Upcoming'>('Completed');
@@ -28,7 +29,7 @@ const Booking = () => {
   const data = type === 'Completed' ? completedBookings : upcomingBookings;
 
   return (
-    <View style={{ flex: 1, marginTop: 20 }}>
+    <SafeAreaView style={GlobalStyles.baseContainer}>
       <View style={[GlobalStyles.row, BookingStyles.triggerContainer]}>
         <CustomButton
           variant={type === 'Completed' ? 'primary' : 'text'}
@@ -63,7 +64,7 @@ const Booking = () => {
         contentContainerStyle={{ padding: 12, gap: 20, paddingVertical: 32 }}
         showsVerticalScrollIndicator={false}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

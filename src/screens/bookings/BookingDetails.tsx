@@ -12,6 +12,8 @@ import StarFill from '../../assets/images/icons/StarFill';
 import StarHollow from '../../assets/images/icons/StarHollow';
 import Secure from '../../assets/images/icons/Secure';
 import ChevronLeft from '../../assets/images/icons/ChevronLeft';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import CustomHeader from '../../components/common/CustomHeader';
 
 const lat = 28.6139;
 const lng = 77.209;
@@ -19,30 +21,22 @@ const mapHeight = screenHeight * 0.3;
 
 export default function BookingDetails() {
   return (
-    <ScrollView
-      style={{ flex: 1 }}
-      contentContainerStyle={{ gap: 20, paddingBottom: screenHeight * 0.1 }}
-    >
-      {/* header */}
-      <View style={GlobalStyles.header2}>
-        <ArrowRight width={24} height={24} />
-        <CustomText color={COLORS.white} variant="h3" weight="medium">
-          Details
-        </CustomText>
-        <View style={{ width: 24 }} />
-      </View>
+    <SafeAreaView style={GlobalStyles.baseContainer}>
+      <ScrollView style={{ flex: 1 }} contentContainerStyle={[{ gap: 20 }]}>
+        {/* header */}
+        <CustomHeader text="Details" />
 
-      <View style={BookingDetailStyles.firstContainer}>
-        {/* map  */}
-        <View style={BookingDetailStyles.mapContainer}>
-          <WebView
-            originWhitelist={['*']}
-            scrollEnabled={false}
-            javaScriptEnabled
-            domStorageEnabled
-            style={BookingDetailStyles.webView}
-            source={{
-              html: `<!DOCTYPE html>
+        <View style={BookingDetailStyles.firstContainer}>
+          {/* map  */}
+          <View style={BookingDetailStyles.mapContainer}>
+            <WebView
+              originWhitelist={['*']}
+              scrollEnabled={false}
+              javaScriptEnabled
+              domStorageEnabled
+              style={BookingDetailStyles.webView}
+              source={{
+                html: `<!DOCTYPE html>
               <html>
                 <head>
                   <meta name="viewport" content="initial-scale=1,maximum-scale=1"/>
@@ -59,152 +53,152 @@ export default function BookingDetails() {
                   </iframe>
                 </body>
               </html>`,
+              }}
+            />
+          </View>
+
+          <View style={BookingDetailStyles.row}>
+            <View style={BookingDetailStyles.content}>
+              <View>
+                <CustomText color={COLORS.white} variant="body">
+                  Sector 18, Near DLF Cyber Hub
+                </CustomText>
+                <CustomText color={COLORS.disabled} variant="caption">
+                  Gurugram, Haryana
+                </CustomText>
+              </View>
+              <View>
+                <CustomText color={COLORS.white} variant="body">
+                  16 May 2025
+                </CustomText>
+                <CustomText color={COLORS.disabled} variant="caption">
+                  06:30 PM
+                </CustomText>
+              </View>
+            </View>
+            <View style={BookingDetailStyles.rebook}>
+              <CustomText color={COLORS.white} weight="medium" align="center">
+                ₹ 252.00
+              </CustomText>
+              <CustomButton
+                style={BookingDetailStyles.status}
+                variant="text"
+                size="sm"
+              >
+                <CustomText color={StatusColor['Completed']}>
+                  Completed
+                </CustomText>
+              </CustomButton>
+            </View>
+          </View>
+        </View>
+
+        {/* Driver */}
+        <View style={BookingDetailStyles.driverContainer}>
+          <Image
+            source={{ uri: 'https://randomuser.me/api/portraits/men/11.jpg' }}
+            style={{
+              // flex: 1,
+              width: 50,
+              height: 55,
+              objectFit: 'fill',
+              borderRadius: 8,
             }}
           />
-        </View>
-
-        <View style={BookingDetailStyles.row}>
-          <View style={BookingDetailStyles.content}>
-            <View>
-              <CustomText color={COLORS.white} variant="body">
-                Sector 18, Near DLF Cyber Hub
-              </CustomText>
-              <CustomText color={COLORS.disabled} variant="caption">
-                Gurugram, Haryana
-              </CustomText>
-            </View>
-            <View>
-              <CustomText color={COLORS.white} variant="body">
-                16 May 2025
-              </CustomText>
-              <CustomText color={COLORS.disabled} variant="caption">
-                06:30 PM
-              </CustomText>
-            </View>
-          </View>
-          <View style={BookingDetailStyles.rebook}>
-            <CustomText color={COLORS.white} weight="medium" align="center">
-              ₹ 252.00
+          <View style={BookingDetailStyles.driverDetails}>
+            <CustomText color={COLORS.white} variant="h3">
+              Laxman Kumar
             </CustomText>
-            <CustomButton
-              style={BookingDetailStyles.status}
-              variant="text"
-              size="sm"
-            >
-              <CustomText color={StatusColor['Completed']}>
-                Completed
-              </CustomText>
-            </CustomButton>
+            <View style={[GlobalStyles.row, { gap: 6 }]}>
+              <StarFill width={14} height={14} />
+              <StarFill width={14} height={14} />
+              <StarFill width={14} height={14} />
+              <StarFill width={14} height={14} />
+              <StarHollow width={14} height={14} />
+            </View>
           </View>
         </View>
-      </View>
 
-      {/* Driver */}
-      <View style={BookingDetailStyles.driverContainer}>
-        <Image
-          source={{ uri: 'https://randomuser.me/api/portraits/men/11.jpg' }}
-          style={{
-            // flex: 1,
-            width: 50,
-            height: 55,
-            objectFit: 'fill',
-            borderRadius: 8,
-          }}
-        />
-        <View style={BookingDetailStyles.driverDetails}>
-          <CustomText color={COLORS.white} variant="h3">
-            Laxman Kumar
-          </CustomText>
-          <View style={[GlobalStyles.row, { gap: 6 }]}>
-            <StarFill width={14} height={14} />
-            <StarFill width={14} height={14} />
-            <StarFill width={14} height={14} />
-            <StarFill width={14} height={14} />
-            <StarHollow width={14} height={14} />
+        {/* Fare */}
+        <View style={BookingDetailStyles.boxContainer}>
+          <View style={BookingDetailStyles.boxRow}>
+            <CustomText color={COLORS.disabled}>Ride Charge</CustomText>
+            <CustomText color={COLORS.disabled}>₹248.00</CustomText>
+          </View>
+          <View style={BookingDetailStyles.boxRow}>
+            <CustomText color={COLORS.disabled}>Insurance</CustomText>
+            <CustomText color={COLORS.disabled}>₹2.40</CustomText>
+          </View>
+          <View style={BookingDetailStyles.boxRow}>
+            <CustomText color={COLORS.disabled}>Platform fee</CustomText>
+            <CustomText color={COLORS.disabled}>₹1.60</CustomText>
+          </View>
+          <View style={[GlobalStyles.line, { borderStyle: 'dotted' }]} />
+          <View style={BookingDetailStyles.boxRow}>
+            <CustomText color={COLORS.disabled} variant="h3" weight="bold">
+              <Secure color={COLORS.disabled} width={18} height={18} />
+              {`  `}Total
+            </CustomText>
+            <CustomText color={COLORS.disabled} variant="h3" weight="bold">
+              ₹252.00
+            </CustomText>
           </View>
         </View>
-      </View>
 
-      {/* Fare */}
-      <View style={BookingDetailStyles.boxContainer}>
-        <View style={BookingDetailStyles.boxRow}>
-          <CustomText color={COLORS.disabled}>Ride Charge</CustomText>
-          <CustomText color={COLORS.disabled}>₹248.00</CustomText>
-        </View>
-        <View style={BookingDetailStyles.boxRow}>
-          <CustomText color={COLORS.disabled}>Insurance</CustomText>
-          <CustomText color={COLORS.disabled}>₹2.40</CustomText>
-        </View>
-        <View style={BookingDetailStyles.boxRow}>
-          <CustomText color={COLORS.disabled}>Platform fee</CustomText>
-          <CustomText color={COLORS.disabled}>₹1.60</CustomText>
-        </View>
-        <View style={[GlobalStyles.line, { borderStyle: 'dotted' }]} />
-        <View style={BookingDetailStyles.boxRow}>
-          <CustomText color={COLORS.disabled} variant="h3" weight="bold">
-            <Secure color={COLORS.disabled} width={18} height={18} />
-            {`  `}Total
+        <CustomButton size="lg">
+          <CustomText weight="medium" variant="h3">
+            Re-book
           </CustomText>
-          <CustomText color={COLORS.disabled} variant="h3" weight="bold">
-            ₹252.00
-          </CustomText>
-        </View>
-      </View>
+        </CustomButton>
 
-      <CustomButton size="lg">
-        <CustomText weight="medium" variant="h3">
-          Re-book
-        </CustomText>
-      </CustomButton>
-
-      {/* Report */}
-      <View
-        style={[
-          BookingDetailStyles.boxContainer,
-          { backgroundColor: COLORS.backgroundSecondary, padding: 18 },
-        ]}
-      >
-        <CustomText
-          weight="medium"
-          color={COLORS.white}
-          variant="h3"
-          align="center"
+        {/* Report */}
+        <View
+          style={[
+            BookingDetailStyles.boxContainer,
+            { backgroundColor: COLORS.backgroundSecondary, padding: 18 },
+          ]}
         >
-          Report and issue
-        </CustomText>
-        <Pressable style={BookingDetailStyles.boxRow}>
-          <CustomText color={COLORS.disabled}>
-            Overcharged by the driver
+          <CustomText
+            weight="medium"
+            color={COLORS.white}
+            variant="h3"
+            align="center"
+          >
+            Report and issue
           </CustomText>
-          <ChevronLeft height={16} width={12} />
-        </Pressable>
-        <View style={GlobalStyles.line} />
-        <Pressable style={BookingDetailStyles.boxRow}>
-          <CustomText color={COLORS.disabled}>Ride safety</CustomText>
-          <ChevronLeft height={16} width={12} />
-        </Pressable>
-        <View style={GlobalStyles.line} />
-        <Pressable style={BookingDetailStyles.boxRow}>
-          <CustomText color={COLORS.disabled}>
-            Billing related issues
-          </CustomText>
-          <ChevronLeft height={16} width={12} />
-        </Pressable>
-        <View style={GlobalStyles.line} />
-        <Pressable style={BookingDetailStyles.boxRow}>
-          <CustomText color={COLORS.disabled}>
-            I want to report and issue about the driver
-          </CustomText>
-          <ChevronLeft height={16} width={12} />
-        </Pressable>
-      </View>
-    </ScrollView>
+          <Pressable style={BookingDetailStyles.boxRow}>
+            <CustomText color={COLORS.disabled}>
+              Overcharged by the driver
+            </CustomText>
+            <ChevronLeft height={16} width={12} />
+          </Pressable>
+          <View style={GlobalStyles.line} />
+          <Pressable style={BookingDetailStyles.boxRow}>
+            <CustomText color={COLORS.disabled}>Ride safety</CustomText>
+            <ChevronLeft height={16} width={12} />
+          </Pressable>
+          <View style={GlobalStyles.line} />
+          <Pressable style={BookingDetailStyles.boxRow}>
+            <CustomText color={COLORS.disabled}>
+              Billing related issues
+            </CustomText>
+            <ChevronLeft height={16} width={12} />
+          </Pressable>
+          <View style={GlobalStyles.line} />
+          <Pressable style={BookingDetailStyles.boxRow}>
+            <CustomText color={COLORS.disabled}>
+              I want to report and issue about the driver
+            </CustomText>
+            <ChevronLeft height={16} width={12} />
+          </Pressable>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const BookingDetailStyles = StyleSheet.create({
   firstContainer: {
-    marginTop: 10,
     padding: 15,
     backgroundColor: COLORS.backgroundTertiary,
     borderRadius: 8,

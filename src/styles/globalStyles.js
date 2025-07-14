@@ -6,13 +6,15 @@ import { COLORS } from '../constants/colors';
 export const GlobalStyles = StyleSheet.create({
   baseContainer: {
     flex: 1,
-    backgroundColor: COLORS.background,
+    backgroundColor: COLORS.backgroundPrimary,
+    paddingTop: 20,
+    paddingHorizontal: 10,
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: COLORS.background,
+    backgroundColor: COLORS.backgroundPrimary,
   },
   img: {
     width: SCREEN_WIDTH * 0.5,
@@ -29,8 +31,8 @@ export const GlobalStyles = StyleSheet.create({
   header2: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent:"space-between",
-    marginTop:12
+    justifyContent: 'space-between',
+    marginTop: 12,
   },
   flex: {
     flex: 1,
