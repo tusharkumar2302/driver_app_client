@@ -6,10 +6,11 @@ import { CustomButton } from '../components/common/CustomButton';
 import { SCREEN_WIDTH } from '../constants/dimensions';
 import Google from '../assets/images/icons/Google';
 import Facebook from '../assets/images/icons/Facebook';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const AuthLayout = ({ header, footer, children }: any) => {
   return (
-    <View style={{backgroundColor: COLORS.backgroundPrimary}}>
+    <SafeAreaView style={styles.container}>
       <View>{header}</View>
       <View>{children}</View>
       <View style={styles.divider}>
@@ -26,16 +27,20 @@ const AuthLayout = ({ header, footer, children }: any) => {
           Facebook
         </CustomButton>
       </View>
-      <View style={{paddingBottom: 50}}>
-        {footer}
-      </View>
-    </View>
+      <View style={{ paddingBottom: 50 }}>{footer}</View>
+    </SafeAreaView>
   );
 };
 
 export default AuthLayout;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.backgroundPrimary,
+    paddingHorizontal: 10,
+    paddingTop: 25,
+  },
   divider: {
     marginVertical: 20,
   },

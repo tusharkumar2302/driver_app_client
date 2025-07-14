@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import ArrowRight from '../../../assets/images/icons/ArrowRight';
 import Lock from '../../../assets/images/icons/Lock';
 import CustomBottomSheet from '../../../components/common/CustomBottomSheet';
 import { CustomButton } from '../../../components/common/CustomButton';
@@ -10,19 +9,15 @@ import { AUTH_STRINGS } from '../../../constants/authStrings';
 import { COLORS } from '../../../constants/colors';
 import { SCREEN_HEIGHT } from '../../../constants/dimensions';
 import { ForgotPassword2_img, success_img } from '../../../constants/images';
-import { GlobalStyles } from '../../../styles/globalStyles';
 import { navigate } from '../../../utils/NavigationUtil';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import CustomHeader from '../../../components/common/CustomHeader';
 
 const CreateNewPassword = () => {
   const bottomSheetRef = useRef<any>(null);
   return (
-    <View style={ForgotPassword1Styles.container}>
-      <View style={GlobalStyles.header}>
-        <ArrowRight width={28} height={28} />
-        <CustomText color={COLORS.white} variant="h2" weight="bold">
-          {AUTH_STRINGS.resetPassword.title}
-        </CustomText>
-      </View>
+    <SafeAreaView style={ForgotPassword1Styles.container}>
+      <CustomHeader text={AUTH_STRINGS.resetPassword.title} />
       <View>
         <Image
           source={ForgotPassword2_img}
@@ -77,7 +72,7 @@ const CreateNewPassword = () => {
           {AUTH_STRINGS.resetPassword.backToLogin}
         </CustomButton>
       </CustomBottomSheet>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -86,6 +81,10 @@ export default CreateNewPassword;
 const ForgotPassword1Styles = StyleSheet.create({
   container: {
     gap: SCREEN_HEIGHT * 0.075,
+    backgroundColor: COLORS.backgroundPrimary,
+    flex: 1,
+    paddingHorizontal: 10,
+    paddingTop: 20,
   },
   content: {
     flexDirection: 'column',

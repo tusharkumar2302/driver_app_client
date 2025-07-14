@@ -1,6 +1,5 @@
-import { View, Image, StyleSheet, Pressable } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
-import ArrowRight from '../../../assets/images/icons/ArrowRight';
 import { CustomText } from '../../../components/common/CustomText';
 import { AUTH_STRINGS } from '../../../constants/authStrings';
 import { GlobalStyles } from '../../../styles/globalStyles';
@@ -10,6 +9,8 @@ import { CustomButton } from '../../../components/common/CustomButton';
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../../constants/dimensions';
 import OTP from '../../../components/OTP';
 import { navigate } from '../../../utils/NavigationUtil';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import CustomHeader from '../../../components/common/CustomHeader';
 
 const COUNTDOWN = 60;
 
@@ -33,13 +34,8 @@ const ForgotPassword2 = () => {
   }, []);
 
   return (
-    <View style={ForgotPassword1Styles.container}>
-      <View style={GlobalStyles.header}>
-        <ArrowRight width={28} height={28} />
-        <CustomText color={COLORS.white} variant="h2" weight="bold">
-          {AUTH_STRINGS.forgotPassword.otp}
-        </CustomText>
-      </View>
+    <SafeAreaView style={ForgotPassword1Styles.container}>
+      <CustomHeader align="left" text={AUTH_STRINGS.forgotPassword.otp} />
       <View>
         <Image
           source={ForgotPassword2_img}
@@ -64,13 +60,16 @@ const ForgotPassword2 = () => {
             {time} sec
           </CustomText>
         </CustomText>
-        <Pressable onPress={() => {navigate('CreateNewPassword')}}>
-        <CustomButton style={{ marginHorizontal: 10, marginTop: 22 }}>
+        <CustomButton
+          onPress={() => {
+            navigate('CreateNewPassword');
+          }}
+          style={{ marginHorizontal: 10, marginTop: 22 }}
+        >
           {AUTH_STRINGS.forgotPassword.verify}
         </CustomButton>
-        </Pressable>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -79,6 +78,10 @@ export default ForgotPassword2;
 const ForgotPassword1Styles = StyleSheet.create({
   container: {
     gap: SCREEN_HEIGHT * 0.075,
+    backgroundColor: COLORS.backgroundPrimary,
+    flex: 1,
+    paddingHorizontal: 10,
+    paddingTop: 20,
   },
   content: {
     flexDirection: 'column',
