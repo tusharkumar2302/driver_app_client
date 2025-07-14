@@ -18,6 +18,7 @@ interface InputProps extends TextInputProps {
   error?: string;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  borderColor?: string;
   containerStyle?: StyleProp<ViewStyle>;
 }
 
@@ -26,6 +27,7 @@ export const CustomInput: React.FC<InputProps> = ({
   error,
   leftIcon,
   rightIcon,
+  borderColor = 'transparent',
   style,
   containerStyle,
   ...props
@@ -35,7 +37,11 @@ export const CustomInput: React.FC<InputProps> = ({
   return (
     <View style={containerStyle}>
       {label && (
-        <CustomText color={COLORS.white} variant="body" style={{ marginBottom: 10 }}>
+        <CustomText
+          color={COLORS.white}
+          variant="body"
+          style={{ marginBottom: 10 }}
+        >
           {label}
         </CustomText>
       )}
@@ -45,7 +51,7 @@ export const CustomInput: React.FC<InputProps> = ({
           backgroundColor: COLORS.backgroundSecondary,
           alignItems: 'center',
           borderWidth: 1,
-          borderColor: error ? COLORS.error : 'transparent',
+          borderColor: error ? COLORS.error : borderColor,
           borderRadius: 8,
           paddingHorizontal: 12,
         }}
