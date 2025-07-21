@@ -6,7 +6,7 @@ const ChevronLeft = props => (
     width={props.width || 4}
     height={props.height || 8}
     fill="none"
-    viewBox="0 0 8 8"
+    viewBox="0 0 4 8"
     {...props}
   >
     <Path
