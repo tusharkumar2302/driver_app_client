@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     backgroundColor: COLORS.backgroundSecondary,
     borderRadius: 8,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     marginVertical: 20,
   },
   dropdown: {
