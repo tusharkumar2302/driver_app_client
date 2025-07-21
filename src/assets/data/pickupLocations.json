@@ -1,0 +1,27 @@
+[
+  {
+    "distance": "10 km",
+    "area": "Baithakkhana",
+    "address": "Kolkata, West Bengal 700009"
+  },
+  {
+    "distance": "8 km",
+    "area": "Salt Lake",
+    "address": "Kolkata, West Bengal 700091"
+  },
+  {
+    "distance": "12 km",
+    "area": "Park Street",
+    "address": "Kolkata, West Bengal 700016"
+  },
+  {
+    "distance": "6 km",
+    "area": "Gariahat",
+    "address": "Kolkata, West Bengal 700019"
+  },
+  {
+    "distance": "15 km",
+    "area": "Dumdum",
+    "address": "Kolkata, West Bengal 700028"
+  }
+]
