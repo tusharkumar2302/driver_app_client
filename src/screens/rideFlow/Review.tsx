@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     backgroundColor: COLORS.backgroundSecondary,
     borderRadius: 8,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     marginVertical: 20,
   },
   imageText: {
@@ -167,8 +167,6 @@ const styles = StyleSheet.create({
   },
   yesNoRow: {
     flexDirection: 'row',
-    // marginTop: 10,
-    // marginBottom: 10,
     height: SCREEN_HEIGHT * 0.1,
   },
   yesNoWrapper: {
@@ -181,6 +179,7 @@ const styles = StyleSheet.create({
   },
   describeExperience: {
     borderRadius: 8,
+    paddingLeft: 10,
     height: SCREEN_HEIGHT * 0.17,
     backgroundColor: COLORS.backgroundPrimary,
   },

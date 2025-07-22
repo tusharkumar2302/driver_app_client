@@ -16,7 +16,8 @@ export const AUTH_STRINGS = {
     enterName: "Enter Name",
     confirmPassword: "Confirm Password",
     signUp: "Sign Up",
-    haveAccount: "Already have an account? Login"
+    haveAccount: "Already have an account?",
+    login: "Login"
   },
   forgotPassword: {
     title: "Forgot Password",
