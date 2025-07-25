@@ -7,10 +7,11 @@ import { CustomText } from '../../components/common/CustomText';
 import { COLORS } from '../../constants/colors';
 import { PROFILE_STRINGS } from '../../constants/profileStrings';
 import { GlobalStyles } from '../../styles/globalStyles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Account = () => {
   return (
-    <View>
+    <SafeAreaView style={GlobalStyles.baseContainer}>
       <View style={[GlobalStyles.header, styles.headerRow]}>
         <ArrowRight width={28} height={28} />
         <CustomText
@@ -48,7 +49,7 @@ const Account = () => {
           placeholder={PROFILE_STRINGS.editProfile.phonePlaceholder}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

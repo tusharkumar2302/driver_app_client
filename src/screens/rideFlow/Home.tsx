@@ -34,29 +34,41 @@ const Home = () => {
           <View style={styles.saveDriverContainer}>
             <View style={styles.bookGroupDriver}>
               <Group width={24} height={24} />
-              <CustomText variant="caption" weight="bold" color={COLORS.white}>
-                {RIDE_STRINGS.home.group}
-              </CustomText>
-              <CustomText
-                variant="caption"
-                weight="regular"
-                color={COLORS.white}
-              >
-                {RIDE_STRINGS.home.groupDescription}
-              </CustomText>
+              <View>
+                <CustomText
+                  variant="caption"
+                  weight="bold"
+                  color={COLORS.white}
+                >
+                  {RIDE_STRINGS.home.group}
+                </CustomText>
+                <CustomText
+                  variant="caption"
+                  weight="regular"
+                  color={COLORS.white}
+                >
+                  {RIDE_STRINGS.home.groupDescription}
+                </CustomText>
+              </View>
             </View>
             <View style={styles.saveDriver}>
               <Bookmark width={24} height={24} />
-              <CustomText variant="caption" weight="bold" color={COLORS.white}>
-                {RIDE_STRINGS.home.saveDriver}
-              </CustomText>
-              <CustomText
-                variant="caption"
-                weight="regular"
-                color={COLORS.white}
-              >
-                {RIDE_STRINGS.home.saveDriverDescription}
-              </CustomText>
+              <View>
+                <CustomText
+                  variant="caption"
+                  weight="bold"
+                  color={COLORS.white}
+                >
+                  {RIDE_STRINGS.home.saveDriver}
+                </CustomText>
+                <CustomText
+                  variant="caption"
+                  weight="regular"
+                  color={COLORS.white}
+                >
+                  {RIDE_STRINGS.home.saveDriverDescription}
+                </CustomText>
+              </View>
             </View>
           </View>
 
@@ -106,7 +118,7 @@ const Home = () => {
                   style={styles.iconMargin}
                 />
                 <CustomText
-                  variant="body"
+                  variant="caption"
                   weight="regular"
                   color={COLORS.white}
                 >
@@ -152,21 +164,24 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    gap: 10,
   },
   bookGroupDriver: {
-    width: '45%',
+    flex: 1,
     height: 60,
     backgroundColor: COLORS.backgroundSecondary,
     borderRadius: 10,
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
   },
   saveDriver: {
-    width: '45%',
+    flex: 1,
     height: 60,
     backgroundColor: COLORS.backgroundSecondary,
     borderRadius: 10,
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
   },
   searchContainer: {
